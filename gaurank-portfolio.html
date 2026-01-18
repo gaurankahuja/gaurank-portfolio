@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaurank Ahuja</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 40px;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: #5a7ea6;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #3d5a7a;
+        }
+
+        .hero {
+            background: white;
+            padding: 120px 0 100px;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-contact {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 1rem;
+        }
+
+        .about {
+            background: #f7fafc;
+        }
+
+        .about-content {
+            max-width: 800px;
+        }
+
+        .card-grid {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: all 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card-date {
+            font-size: 0.9rem;
+            color: #718096;
+            white-space: nowrap;
+        }
+
+        .card-company {
+            font-size: 0.95rem;
+            color: #5a7ea6;
+            margin-bottom: 16px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding-left: 20px;
+            margin-bottom: 12px;
+            position: relative;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #5a7ea6;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #2d3748;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            color: #2d3748;
+            font-weight: 500;
+        }
+
+        .skill-level {
+            color: #718096;
+        }
+
+        .principles {
+            background: #f7fafc;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .principle {
+            padding: 24px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #5a7ea6;
+        }
+
+        .principle h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .principle p {
+            font-size: 0.98rem;
+            margin: 0;
+        }
+
+        .contact {
+            text-align: center;
+            background: white;
+            padding: 80px 0;
+        }
+
+        .contact h2 {
+            margin-bottom: 24px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 1.1rem;
+        }
+
+        .education-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 24px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #5a7ea6;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .education-main {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .education-main h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .education-details {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        .education-score {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 80px 0 60px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .skills-grid,
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Gaurank Ahuja</h1>
+            <p>Economics student at Hindu College with a focus on financial research, valuation modeling, and strategic analysis. Currently exploring growth strategies and policy research.</p>
+            <div class="hero-contact">
+                <span>7470567572</span>
+                <span>|</span>
+                <a href="mailto:gaurank.ahuja@gmail.com">gaurank.ahuja@gmail.com</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About</h2>
+                <p>I'm a third-year Economics student at Hindu College, University of Delhi, with hands-on experience in financial modeling, business research, and strategic planning. My work spans building DCF models for early-stage startups to researching fundraising strategies for private companies.</p>
+                <p>Beyond finance, I've led policy research initiatives, coordinated community outreach programs, and competed at state level in chess. I approach problems with structure and curiosity, and I use modern tools, including AI, where they help improve clarity or speed.</p>
+                
+                <div class="education-grid">
+                    <div class="education-item">
+                        <div class="education-main">
+                            <h3>BA (Hons.) Economics</h3>
+                            <div class="education-details">Hindu College, University of Delhi • Present</div>
+                        </div>
+                        <div class="education-score">8.59 CGPA</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-main">
+                            <h3>CBSE Class XII</h3>
+                            <div class="education-details">Nirmal Higher Secondary School • 2024</div>
+                        </div>
+                        <div class="education-score">92.8%</div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-main">
+                            <h3>CBSE Class X</h3>
+                            <div class="education-details">Nirmal Higher Secondary School • 2022</div>
+                        </div>
+                        <div class="education-score">93.8%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Financial Research Intern</h3>
+                        <span class="card-date">Oct 2025 – Present</span>
+                    </div>
+                    <div class="card-company">Shinde Chemicals Pvt. Ltd.</div>
+                    <ul>
+                        <li>Built a 3-statement financial model with 5-year forecasts to support fundraising planning</li>
+                        <li>Running DCF valuation with sensitivity analysis to estimate realistic company valuation for investor discussions</li>
+                        <li>Researching comparable companies to validate multiples and strengthen key assumptions in the model</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Business Research and Valuation Intern</h3>
+                        <span class="card-date">Jul 2025 – Sep 2025</span>
+                    </div>
+                    <div class="card-company">AIQ Space Ventures</div>
+                    <ul>
+                        <li>Delivered strategic insights to CEO and senior management through research on 30+ space-tech companies and market trends</li>
+                        <li>Supported investment decisions by building DCF and CCA valuation models benchmarked against 5+ early-stage startups</li>
+                        <li>Enhanced leadership decision-making by presenting 10+ structured reports and financial models directly to senior team</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 60px;">Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Growth Advisory</h3>
+                        <span class="card-date">Sep 2025 – Present</span>
+                    </div>
+                    <div class="card-company">Crowwd</div>
+                    <ul>
+                        <li>Supporting a Brussels-based financial education platform in its growth initiatives by strategizing user onboarding</li>
+                        <li>Analyzing platform funnel metrics to identify drop-off points and propose conversion improvements</li>
+                        <li>Designing outreach and community-building strategies to expand student user base across universities</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Policy Associate</h3>
+                        <span class="card-date">Oct 2025 – Present</span>
+                    </div>
+                    <div class="card-company">YLAC Policy Collective</div>
+                    <ul>
+                        <li>Led a team of 10 in a policy ideation project, conducting structured research and actionable policy recommendations</li>
+                        <li>Explored current finance and economic policy issues and supported organization of a student-focused event</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Junior Associate</h3>
+                        <span class="card-date">Sep 2025 – Present</span>
+                    </div>
+                    <div class="card-company">GAEE</div>
+                    <ul>
+                        <li>Supporting research and outreach activities in economics, finance, and entrepreneurship as part of ongoing GAEE initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Volunteer</h3>
+                        <span class="card-date">Sep 2025 – Present</span>
+                    </div>
+                    <div class="card-company">Street Cause Hindu</div>
+                    <ul>
+                        <li>Volunteered in community outreach drives supporting education and awareness, impacting 200+ underprivileged students</li>
+                        <li>Coordinated a team of 8 volunteers to plan and execute donation drives, distributing 150+ kits to families in need</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Skills and Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Technical Tools</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Excel</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">R Programming</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PowerPoint</span>
+                        <span class="skill-level">Superior</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Power BI</span>
+                        <span class="skill-level">Proficient</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Core Capabilities</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Financial Modeling</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Research</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Communication</span>
+                        <span class="skill-level">Superior</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Leadership</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Certifications</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">NISM XV Research Analyst</span>
+                        <span class="skill-level">SEBI, May 2025</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Power BI for Data Analysis</span>
+                        <span class="skill-level">Udemy, Nov 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="principles">
+        <div class="container">
+            <h2>How I Work</h2>
+            <div class="principles-grid">
+                <div class="principle">
+                    <h3>Structure first</h3>
+                    <p>I start with frameworks and break problems into clear parts. Whether building a financial model or coordinating a team project, structure helps me stay focused and deliver results.</p>
+                </div>
+                <div class="principle">
+                    <h3>Learn by doing</h3>
+                    <p>I believe the best way to understand something is to work on it. From valuation models to policy research, I learn most when I'm actively solving real problems.</p>
+                </div>
+                <div class="principle">
+                    <h3>Collaborate and lead</h3>
+                    <p>I've led teams of 10, coordinated events with 1,000+ participants, and worked closely with senior leadership. I value clear communication and shared ownership of outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:gaurank.ahuja@gmail.com">gaurank.ahuja@gmail.com</a>
+                <span>|</span>
+                <span>7470567572</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
